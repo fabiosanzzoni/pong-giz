@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://dsagec2j2soc5"]
+
+[ext_resource type="PackedScene" uid="uid://dhd353nj8fj0h" path="res://scenes/gamescenario.tscn" id="1_0w1e3"]
+[ext_resource type="Script" path="res://scripts/player_1.gd" id="2_3064y"]
+[ext_resource type="Texture2D" uid="uid://da7b01j15fvgp" path="res://assets/player1.png" id="3_r64mi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lt4ui"]
+size = Vector2(44, 115)
+
+[node name="Player1" type="Node2D"]
+
+[node name="gamescenario" parent="." instance=ExtResource("1_0w1e3")]
+
+[node name="player1" type="CharacterBody2D" parent="."]
+position = Vector2(50, 325)
+script = ExtResource("2_3064y")
+
+[node name="Sprite2D" type="Sprite2D" parent="player1"]
+texture = ExtResource("3_r64mi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player1"]
+visible = false
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_lt4ui")
